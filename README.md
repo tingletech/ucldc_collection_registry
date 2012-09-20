@@ -3,6 +3,10 @@
 Playing around with a django app for managing a registry of UC Libraries
 Digital Collections.
 
+## notes
+
+http://stackoverflow.com/questions/4114942/django-svn-deployment
+
 License
 -------
 
