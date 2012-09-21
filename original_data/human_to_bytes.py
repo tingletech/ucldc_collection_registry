@@ -14,6 +14,7 @@ http://code.activestate.com/recipes/578019-bytes-to-human-human-to-bytes-convert
 
 # see: http://goo.gl/kTQMs
 SYMBOLS = {
+    'ours'          : ('B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'),
     'customary'     : ('B', 'K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y'),
     'customary_ext' : ('byte', 'kilo', 'mega', 'giga', 'tera', 'peta', 'exa',
                        'zetta', 'iotta'),

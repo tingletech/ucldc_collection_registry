@@ -37,6 +37,7 @@ class Collection(models.Model):
     url_local = models.CharField(max_length=255,blank=True)
     url_oac = models.CharField(max_length=255,blank=True)
     url_was = models.CharField(max_length=255,blank=True)
+    hosted = models.CharField(max_length=255,blank=True)
     status = models.ManyToManyField(Status)
     format = models.ManyToManyField(Format)
     extent = models.BigIntegerField(blank=True, null=True)
