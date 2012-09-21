@@ -34,5 +34,7 @@ for row in dataReader:
             collection.status.add(Status.objects.get(name = row[4]))
         # if row[]:
         #     collection.format.add(Format.objects.get(name = row[]))
+        if row[5]:
+            collection.access_restrictions.add(Restriction.objects.get(name = row[5]))
         if row[9]:
             collection.need_for_dams.add(Need.objects.get(name = row[9]))
