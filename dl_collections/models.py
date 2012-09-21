@@ -33,16 +33,16 @@ class Need(models.Model):
 class Collection(models.Model):
     name = models.CharField(max_length=255)
     campus = models.ManyToManyField(Campus)	# why not a multi-campus collection?
-    description = models.TextField()
-    url_local = models.CharField(max_length=255)
-    url_oac = models.CharField(max_length=255)
-    url_was = models.CharField(max_length=255)
+    description = models.TextField(blank=True)
+    url_local = models.CharField(max_length=255,blank=True)
+    url_oac = models.CharField(max_length=255,blank=True)
+    url_was = models.CharField(max_length=255,blank=True)
     status = models.ManyToManyField(Status)
     format = models.ManyToManyField(Format)
-    extent = models.BigIntegerField()
+    extent = models.BigIntegerField(blank=True, null=True)
     access_restrictions = models.ManyToManyField(Restriction)
-    metadata_level = models.CharField(max_length=255)
-    metadata_standard = models.CharField(max_length=255)
+    metadata_level = models.CharField(max_length=255,blank=True)
+    metadata_standard = models.CharField(max_length=255,blank=True)
     need_for_dams = models.ManyToManyField(Need)
     ready_for_surfacing = models.BooleanField()
     def __unicode__(self):
