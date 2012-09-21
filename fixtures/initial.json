@@ -1,0 +1,145 @@
+[
+  {
+    "pk": 1, 
+    "model": "dl_collections.campus", 
+    "fields": {
+      "name": "Berkeley", 
+      "slug": "UCB"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "dl_collections.campus", 
+    "fields": {
+      "name": "Davis", 
+      "slug": "UCD"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "dl_collections.campus", 
+    "fields": {
+      "name": "Irvine", 
+      "slug": "UCI"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "dl_collections.campus", 
+    "fields": {
+      "name": "Merced", 
+      "slug": "UCM"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "dl_collections.campus", 
+    "fields": {
+      "name": "Riverside", 
+      "slug": "UCR"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "dl_collections.campus", 
+    "fields": {
+      "name": "San Diego", 
+      "slug": "UCSD"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "dl_collections.campus", 
+    "fields": {
+      "name": "San Francisco", 
+      "slug": "UCSF"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "dl_collections.campus", 
+    "fields": {
+      "name": "Santa Barbara", 
+      "slug": "UCSB"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "dl_collections.campus", 
+    "fields": {
+      "name": "Santa Cruz", 
+      "slug": "UCSC"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "dl_collections.campus", 
+    "fields": {
+      "name": "UCLA", 
+      "slug": "UCLA"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "dl_collections.status", 
+    "fields": {
+      "name": "Completed"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "dl_collections.status", 
+    "fields": {
+      "name": "Ongoing"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "dl_collections.status", 
+    "fields": {
+      "name": "Planning"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "dl_collections.restriction", 
+    "fields": {
+      "name": "No"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "dl_collections.restriction", 
+    "fields": {
+      "name": "Restricted"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "dl_collections.restriction", 
+    "fields": {
+      "name": "Some items restricted"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "dl_collections.need", 
+    "fields": {
+      "name": "High"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "dl_collections.need", 
+    "fields": {
+      "name": "Medium"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "dl_collections.need", 
+    "fields": {
+      "name": "Low"
+    }
+  }
+]
