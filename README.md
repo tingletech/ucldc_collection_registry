@@ -7,6 +7,14 @@ Digital Collections.
 
 http://stackoverflow.com/questions/4114942/django-svn-deployment
 
+## load
+
+via `fixtures/initial_data.json` and custom load script
+
+```
+python manage.py syncdb && python original_data/load_tsv.py
+```
+
 License
 -------
 
