@@ -1,10 +1,17 @@
 {% extends "base.html" %}
 
+{% block hero %}
+    <div class="hero-unit row">
+<div class="pull-right">University of California Libraries</div>
+     <h1>
+{{ campus.name }} <small>Digital Collections</small></h1>
+    </div>
+{% endblock %}
 
 {% block content %}
 <div class="container-fluid">
 
-  <div class="row-fluid">
+ <div class="row-fluid">
     <div class="span12">
       {{ extent }} bytes
     </div>
@@ -14,11 +21,9 @@
     <ul class="thumbnails">
     {% for collection in collections %}
 
-<!-- {{ forloop.counter }} -->
-
         <li class="span3">
           <div class="thumbnail">
-            <a href="{% url dl_collections.views.details collection.slug %}">{{ collection.name }}</a>
+            <a href="{{ collection.slug }}">{{ collection.name }}</a>
           </div>
         </li>
     {% endfor %}

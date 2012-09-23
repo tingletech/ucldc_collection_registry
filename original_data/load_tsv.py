@@ -2,6 +2,9 @@ import sys,os
 import os.path
 import csv
 
+# Copyright © 2012 The Regents of the University of California
+# BSD 3-clause license
+
 from human_to_bytes import human2bytes
 
 pathname = os.path.dirname(os.path.abspath(__file__))

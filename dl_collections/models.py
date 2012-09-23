@@ -1,3 +1,5 @@
+# modeles.py
+
 from django.db import models
 from django_extensions.db.fields import AutoSlugField
 from human_to_bytes import bytes2human
@@ -10,6 +12,9 @@ class Campus(models.Model):
         verbose_name_plural = "campuses"
     def __unicode__(self):
         return self.name
+    @models.permalink
+    def get_absolute_url(self):
+        return ('dl_collections.views.UC', [str(self.slug)])
 
 class Status(models.Model):
     name = models.CharField(max_length=255)
@@ -63,7 +68,5 @@ class Collection(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('', (), {
-            'slug': self.slug,
-        })
+        return ('dl_collections.views.details', [str(self.slug)])
 
