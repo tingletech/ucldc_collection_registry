@@ -41,7 +41,7 @@ class Need(models.Model):
 class Collection(models.Model):
     name = models.CharField(max_length=255)
     # uuid_field = UUIDField(primary_key=True)
-    slug = AutoSlugField(max_length=50, unique=True, populate_from=('name','description'))
+    slug = AutoSlugField(max_length=50, populate_from=('name','description'), editable=True)
     campus = models.ManyToManyField(Campus)	# why not a multi-campus collection?
     description = models.TextField(blank=True)
     url_local = models.CharField(max_length=255,blank=True)
@@ -50,7 +50,7 @@ class Collection(models.Model):
     hosted = models.CharField(max_length=255,blank=True)
     status = models.ManyToManyField(Status)
     format = models.ManyToManyField(Format)
-    extent = models.BigIntegerField(blank=True, null=True)
+    extent = models.BigIntegerField(blank=True, null=True, help_text="must be entered in bytes, will take abbreviations later")
     access_restrictions = models.ManyToManyField(Restriction)
     metadata_level = models.CharField(max_length=255,blank=True)
     metadata_standard = models.CharField(max_length=255,blank=True)
