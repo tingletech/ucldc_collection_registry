@@ -1,38 +1,11 @@
 {% extends "base.html" %}
 
 {% block hero %}
-    <div class="hero-unit row">
-<div class="pull-right">University of California Libraries</div>
-     <h1>
-{{ campus.name }} <small>Digital Collections</small></h1>
+  <div class="hero-unit row">
+    <div class="pull-right">University of California Libraries</div>
+      <h1>
+        {{ campus.name }} 
+        <small>Digital Collections</small>
+      </h1>
     </div>
 {% endblock %}
-
-{% block content %}
-<div class="container-fluid">
-
- <div class="row-fluid">
-    <div class="span12">
-      {{ extent }} bytes
-    </div>
-  </div>
-
-{% if collections %}
-    <ul class="thumbnails">
-    {% for collection in collections %}
-
-        <li class="span3">
-          <div class="thumbnail">
-            <a href="{{ collection.slug }}">{{ collection.name }}</a>
-          </div>
-        </li>
-    {% endfor %}
-    </ul>
-  </div>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
-
-</div>
-{% endblock %}
-

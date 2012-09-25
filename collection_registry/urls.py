@@ -26,12 +26,13 @@ sitemaps = {
 
 urlpatterns = patterns('',
     # include the lookup urls
-    (r'^admin/lookups/', include(ajax_select_urls)),
+    #(r'^admin/lookups/', include(ajax_select_urls)),
 
     # Examples:
     # url(r'^$', 'collection_registry.views.home', name='home'),
-    url(r'^$', redirect_to, {'url': '/collection_registry/'}),
-    url(r'^collection_registry/', include('dl_collections.urls')),
+    #url(r'^$', redirect_to, {'url': '/collection_registry/'}),
+    #url(r'^collection_registry/', include('dl_collections.urls')),
+    url(r'^', include('dl_collections.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

@@ -12,5 +12,6 @@ urlpatterns = patterns('',
     #url(r'^(UC.*)/(Restriction)/(.*)$', 'dl_collections.views.UClimit', name='UClimit'),
     #url(r'^(UC.*)/(Need)/(.*)$', 'dl_collections.views.UClimit', name='UClimit'),
     #url(r'^(?P<slug>.*)$', 'dl_collections.views.details', name='detail'),
+    url(r'^(.*)/(.*)$', 'dl_collections.views.details', name='detail'),
     url(r'^(.*)$', 'dl_collections.views.details', name='detail'),
 )

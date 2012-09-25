@@ -68,5 +68,5 @@ class Collection(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('dl_collections.views.details', [str(self.slug)])
+        return ('dl_collections.views.details', [self.id, str(self.slug)])
 
