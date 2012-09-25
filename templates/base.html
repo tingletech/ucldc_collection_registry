@@ -50,7 +50,8 @@
 
 {% block hero %}
     <div class="hero-unit row">
-     <h1>University of California Libraries <small>Digital Collections</small></h1>
+     {% block hero-content %}<h1>University of California Libraries <small>Digital Collections</small></h1>{% endblock %}
+     <a href="#" style="position:relative;top:2em;" class="btn btn-primary"><i class="icon-white icon-plus"></i> Add Collection</a>
     </div>
 {% endblock %}
 
