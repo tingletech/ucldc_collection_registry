@@ -6,7 +6,7 @@ from django.shortcuts import get_object_or_404, get_list_or_404, redirect
 from human_to_bytes import bytes2human
 from django.db.models import Sum
 
-campuses = Campus.objects.all().order_by('name')
+campuses = Campus.objects.all().order_by('slug')
 
 # view for home page
 def home(request):
