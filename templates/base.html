@@ -18,40 +18,11 @@
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 
-{% block navbar %}
-<div class="navbar">
-  <div class="navbar-inner">
-    <div class="container">
- 
-      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
- 
-      <!-- Be sure to leave the brand out there if you want it shown -->
-      <a class="brand" href="{% url dl_collections.views.home %}">Digital Collections</a>
- 
-      <!-- Everything you want hidden at 940px or less, place within here -->
-      <div class="nav-collapse">
-        <!-- .nav, .navbar-search, .navbar-form, etc -->
-        <ul class="nav">
-          {% for campus in campuses %}
-          <li><a href="{% url dl_collections.views.UC campus.slug %}">{{ campus.name }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
- 
-    </div>
-  </div>
-</div>
-{% endblock %}
 
 {% block hero %}
     <div class="hero-unit row">
      {% block hero-content %}<h1>University of California Libraries <small>Digital Collections</small></h1>{% endblock %}
-     <a href="#" style="position:relative;top:2em;" class="btn btn-primary"><i class="icon-white icon-plus"></i> Add Collection</a>
+     <a href="javascript:false();" rel="tooltip" title="this would only show to logged in librarians" style="position:relative;top:2em;" class="btn btn-primary"><i class="icon-white icon-plus"></i> Add Collection</a>
     </div>
 {% endblock %}
 
@@ -74,10 +45,61 @@
           </li>
       {% endfor %}
       </ul>
-    </div>
   {% endif %}
 </div>
 {% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <!-- Be sure to leave the brand out there if you want it shown -->
+      <a class="brand" href="{% url dl_collections.views.home %}">Digital Collections</a>
+      <!-- Everything you want hidden at 940px or less, place within here -->
+      <div class="nav-collapse">
+        <!-- .nav, .navbar-search, .navbar-form, etc -->
+        <ul class="nav">
+          {% for campus in campuses %}
+          <li><a href="{% url dl_collections.views.UC campus.slug %}">{{ campus.slug }}</a></li>
+          {% endfor %}
+        </ul>
+        <ul class="nav pull-right">
+          <li class="dropdown">
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+            <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+              this would link to a UC Trust WAYF page <!-- (add with javascript so this does not go to screen readers?) -->
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+  <div class="container">
+<hr/>
+    <div class="row">
+      <div class="span3"><a href="{% url django.contrib.sitemaps.views.sitemap %}">sitemap.xml</a></div>
+      <div class="span3">
+        <a href="http://libraries.universityofcalifornia.edu/sopag/ngts_pots.html">NGTS Power of Three Groups (POTs)</a>
+      </div>
+      <div class="span3">
+        <a href="http://ucngts.tumblr.com/">UC Libraries Next-Generation Technical Services Tumblr</a>
+      </div>
+    </div>
+  </div>
+<script>
+  $(function () {
+    $('a[rel=tooltip]').tooltip({'title': this.title, 'placement':'right'});
+  })
+</script>
 
   </body>
 </html>
