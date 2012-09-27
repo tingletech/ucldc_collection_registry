@@ -4,7 +4,7 @@ from dl_collections.models import Collection, Campus
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
-from ajax_select import urls as ajax_select_urls
+# from ajax_select import urls as ajax_select_urls
 from django.contrib.sitemaps import GenericSitemap
 from django.views.generic.simple import redirect_to
 admin.autodiscover()
