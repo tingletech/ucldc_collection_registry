@@ -29,13 +29,13 @@
         <span class="icon-bar"></span>
       </a>
       <!-- Be sure to leave the brand out there if you want it shown -->
-      <a class="brand" href="{% url dl_collections.views.home %}">Digital Collections</a>
+      <a class="brand" href="{% url "dl_collections.views.home" %}">Digital Collections</a>
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse">
         <!-- .nav, .navbar-search, .navbar-form, etc -->
         <ul class="nav">
           {% for campus in campuses %}
-          <li><a href="{% url dl_collections.views.UC campus.slug %}">{{ campus.slug }}</a></li>
+          <li><a href="{% url "dl_collections.views.UC" campus.slug %}">{{ campus.slug }}</a></li>
           {% endfor %}
         </ul>
         <ul class="nav pull-right">
@@ -74,7 +74,7 @@
       {% for collection in collections %}
           <li class="span3">
             <div class="thumbnail">
-              <a href="{% url dl_collections.views.details collection.id collection.slug %}">{{ collection.name }}</a>
+              <a href="{% url 'dl_collections.views.details' collection.id collection.slug %}">{{ collection.name }}</a>
             </div>
           </li>
       {% endfor %}
@@ -84,7 +84,7 @@
 
 <hr/>
     <div class="row">
-      <div class="span3"><a href="{% url django.contrib.sitemaps.views.sitemap %}">sitemap.xml</a></div>
+      <div class="span3"><a href="{% url "django.contrib.sitemaps.views.sitemap" %}">sitemap.xml</a></div>
       <div class="span3">
         <a href="http://libraries.universityofcalifornia.edu/sopag/ngts_pots.html">NGTS Power of Three Groups (POTs)</a>
       </div>

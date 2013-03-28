@@ -6,7 +6,8 @@ from dl_collections.models import Collection, Campus
 from django.contrib import admin
 # from ajax_select import urls as ajax_select_urls
 from django.contrib.sitemaps import GenericSitemap
-from django.views.generic.simple import redirect_to
+# http://stackoverflow.com/questions/11428427/no-module-named-simple-error-in-django
+# from django.views.generic.simple import redirect_to
 admin.autodiscover()
 
 collection_dict = {
