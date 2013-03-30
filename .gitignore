@@ -1,2 +1,7 @@
 test-db
 *.pyc
+.Python
+admin_bootstrap/
+bin/
+include/
+lib/
