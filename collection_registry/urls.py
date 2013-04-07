@@ -8,6 +8,10 @@ from django.contrib import admin
 from django.contrib.sitemaps import GenericSitemap
 # http://stackoverflow.com/questions/11428427/no-module-named-simple-error-in-django
 # from django.views.generic.simple import redirect_to
+from django.conf.urls import patterns, url, include
+#from some_app.views import AboutView
+
+
 admin.autodiscover()
 
 collection_dict = {

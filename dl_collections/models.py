@@ -39,6 +39,16 @@ class Need(models.Model):
         return self.name
 
 class Collection(models.Model):
+    DAMNS = 'D'
+    OAI = 'O'
+    CRAWL = 'C'
+    PENDING = 'P'
+    ACCESS_MODES = (
+        (DAMNS, 'Nuxeo DAMS'),
+        (OAI, 'OAI Harvest'),
+        (CRAWL, 'Crawl'),
+        (PENDING, 'Pending'),
+    )
     name = models.CharField(max_length=255)
     # uuid_field = UUIDField(primary_key=True)
     slug = AutoSlugField(max_length=50, populate_from=('name','description'), editable=True)
@@ -56,6 +66,10 @@ class Collection(models.Model):
     metadata_standard = models.CharField(max_length=255,blank=True)
     need_for_dams = models.ManyToManyField(Need)
     ready_for_surfacing = models.BooleanField()
+    access_mode = models.CharField(max_length=1,
+                                      choices=ACCESS_MODES,
+                                      default=PENDING)
+    
 
     def url(self):
         return self.url_local;

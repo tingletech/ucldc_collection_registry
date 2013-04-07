@@ -29,7 +29,7 @@
         <span class="icon-bar"></span>
       </a>
       <!-- Be sure to leave the brand out there if you want it shown -->
-      <a class="brand" href="{% url "dl_collections.views.home" %}">Digital Collections</a>
+      <a class="brand" href="{% url "dl_collections.views.home" %}">Digital Collection</a>
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse">
         <!-- .nav, .navbar-search, .navbar-form, etc -->
@@ -55,7 +55,7 @@
 
 {% block hero %}
     <div class="hero-unit row">
-     {% block hero-content %}<h1>University of California Libraries <small>Digital Collections</small></h1>{% endblock %}
+     {% block hero-content %}<h1>University of California Libraries <small>Digital Collection</small></h1>{% endblock %}
      <a href="javascript:false();" rel="tooltip" title="this would only show to logged in librarians" style="position:relative;top:2em;" class="btn btn-primary"><i class="icon-white icon-plus"></i> Add Collection</a>
     </div>
 {% endblock %}
@@ -86,13 +86,13 @@
     <div class="row">
       <div class="span3"><a href="{% url "django.contrib.sitemaps.views.sitemap" %}">sitemap.xml</a></div>
       <div class="span3">
-        <a href="http://libraries.universityofcalifornia.edu/sopag/ngts_pots.html">NGTS Power of Three Groups (POTs)</a>
+        <a href="http://libraries.universityofcalifornia.edu/ngts/activities-and-groups">NGTS Power of Three Groups (POTs)</a>
       </div>
       <div class="span3">
         <a href="http://ucngts.tumblr.com/">UC Libraries Next-Generation Technical Services Tumblr</a>
       </div>
       <div class="span3">
-      Copyright © 2012 UC Regents.<br/> All rights reserved.
+      Copyright © 2013 UC Regents.<br/> All rights reserved.
       </div>
     </div>
 

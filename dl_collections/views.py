@@ -36,6 +36,10 @@ def details(request, colid, urlstuff):
             }
         )
 
+def details_by_id(request, colid):
+    collection = get_object_or_404(Collection, pk=colid)
+    return redirect(collection, permanent=True)
+
 #view for a UC campus
 def UC(request, urlstuff):
     campus = get_object_or_404(Campus, slug=urlstuff)
