@@ -18,7 +18,7 @@ python manage.py syncdb && python original_data/load_tsv.py
 License
 -------
 
-Copyright © 2012, Regents of the University of California
+Copyright © 2013, Regents of the University of California
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without 

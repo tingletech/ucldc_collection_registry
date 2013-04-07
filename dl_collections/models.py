@@ -23,11 +23,6 @@ class Status(models.Model):
     def __unicode__(self):
         return self.name
 
-class Format(models.Model):
-    name = models.CharField(max_length=255)
-    def __unicode__(self):
-        return self.name
-
 class Restriction(models.Model):
     name = models.CharField(max_length=255)
     def __unicode__(self):
@@ -58,14 +53,14 @@ class Collection(models.Model):
     url_oac = models.CharField(max_length=255,blank=True)
     url_was = models.CharField(max_length=255,blank=True)
     hosted = models.CharField(max_length=255,blank=True)
-    status = models.ManyToManyField(Status)
-    format = models.ManyToManyField(Format)
+    status = models.ForeignKey(Status, null=True, blank=True, default = None)
     extent = models.BigIntegerField(blank=True, null=True, help_text="must be entered in bytes, will take abbreviations later")
-    access_restrictions = models.ManyToManyField(Restriction)
+    access_restrictions = models.ForeignKey(Restriction, null=True, blank=True, default = None)
     metadata_level = models.CharField(max_length=255,blank=True)
     metadata_standard = models.CharField(max_length=255,blank=True)
-    need_for_dams = models.ManyToManyField(Need)
+    need_for_dams = models.ForeignKey(Need, null=True, blank=True, default = None)
     ready_for_surfacing = models.BooleanField()
+    appendix = models.CharField(max_length=1, choices=( ('A', 'A'), ('B', 'B')) )
     access_mode = models.CharField(max_length=1,
                                       choices=ACCESS_MODES,
                                       default=PENDING)

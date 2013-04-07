@@ -20,6 +20,10 @@ dataReader = csv.reader(open(csv_filepathname), delimiter='\t')
 for row in dataReader:
     if row[0] != 'File': # Ignore the header row, import everything else
         collection = Collection()
+        if row[0] == 'appendixA.csv':
+            collection.appendix = 'A'
+        if row[0] == 'appendixB.csv':
+            collection.appendix = 'B'
         collection.name = row[2]
         collection.description = row[3]
         collection.url_local = row[6]
@@ -28,15 +32,13 @@ for row in dataReader:
         collection.hosted = row[8]
         collection.metadata_standard = row[10]
         collection.metadata_level = row[11]
-        # collection.ready_for_surfacing
+        collection.ready_for_surfacing = row[12]
+        if row[9]:
+            collection.need_for_dams = Need.objects.get(name = row[9])
+        if row[4]:
+            collection.status = Status.objects.get(name = row[4])
+        if row[5]:
+            collection.access_restrictions = Restriction.objects.get(name = row[5])
         collection.save()
 
         collection.campus.add(Campus.objects.get(slug = row[1]))
-        if row[4]:
-            collection.status.add(Status.objects.get(name = row[4]))
-        # if row[]:
-        #     collection.format.add(Format.objects.get(name = row[]))
-        if row[5]:
-            collection.access_restrictions.add(Restriction.objects.get(name = row[5]))
-        if row[9]:
-            collection.need_for_dams.add(Need.objects.get(name = row[9]))
