@@ -100,6 +100,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+from django.core.urlresolvers import reverse_lazy
+
+LOGIN_REDIRECT_URL = reverse_lazy('dl_collections.views.home')
+
 ROOT_URLCONF = 'collection_registry.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
@@ -131,6 +135,8 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'dl_collections',
 )
+
+ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
