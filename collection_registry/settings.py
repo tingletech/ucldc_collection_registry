@@ -102,7 +102,8 @@ MIDDLEWARE_CLASSES = (
 
 from django.core.urlresolvers import reverse_lazy
 
-LOGIN_REDIRECT_URL = reverse_lazy('dl_collections.views.home')
+#LOGIN_REDIRECT_URL = reverse_lazy('dl_collections.views.home')
+LOGIN_REDIRECT_URL = "/"
 
 ROOT_URLCONF = 'collection_registry.urls'
 

@@ -40,8 +40,7 @@ class Collection(models.Model):
     PENDING = 'P'
     ACCESS_MODES = (
         (DAMNS, 'Nuxeo DAMS'),
-        (OAI, 'OAI Harvest'),
-        (CRAWL, 'Crawl'),
+        (CRAWL, 'Harvest/Crawl'),
         (PENDING, 'Pending'),
     )
     name = models.CharField(max_length=255)
