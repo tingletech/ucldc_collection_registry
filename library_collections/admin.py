@@ -1,7 +1,7 @@
 # admin.py
 
 from django.contrib import admin
-from provenancial_collections.models import *
+from library_collections.models import *
 from django.contrib.sites.models import Site
 from django.contrib.auth.models import User
 from django.contrib.auth.models import Group
