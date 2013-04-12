@@ -1,14 +1,14 @@
 # sitemap.py
 
 from django.contrib.sitemaps import Sitemap
-from dl_collections.models import Collection
+from provenancial_collections.models import ProvenancialCollection
 
 class RegistrySitemap(Sitemap):
     priority = 0.5
 
     def items(self):
         # return Entry.objects.filter(is_draft=False)
-        return Collection.objects.all()
+        return ProvenancialCollection.objects.all()
 
     #def lastmod(self, obj):
         #return obj.pub_date
